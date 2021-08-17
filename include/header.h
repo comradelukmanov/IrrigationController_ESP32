@@ -13,11 +13,19 @@
 #define RELAY_PIN3 4
 // Номер пина подключенного к реле четвертого клапана
 #define RELAY_PIN4 5
+
 // Номер пина подключенного к 1 датчику DHT11
-#define DHT1pin 7
+#define DHT1pin 16
 // Номер пина подключенного к 2 датчику DHT11
-#define DHT2pin 8
+#define DHT2pin 4
 // Номер пина подключенного к 3 датчику DHT11
-#define DHT3pin 9
+#define DHT3pin 0
 // Номер пина подключенного к 4 датчику DHT11
-#define DHT4pin 10
+#define DHT4pin 15
+
+#define btn_left 12
+#define btn_right 15
+#define btn_up 24
+#define btn_down 25
+#define btn_enter 26
+#define btn_escape 27

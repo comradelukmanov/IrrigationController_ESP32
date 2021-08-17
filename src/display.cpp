@@ -1,44 +1,44 @@
 #include "display.h"
 
-void printUIElement(LiquidCrystal_I2C *lcd, label *elem)
+void printText(LiquidCrystal_I2C *lcd, uint8_t x, uint8_t y, uint8_t len, const char *text)
 {
-    lcd->setCursor(elem->x, elem->y);
-    for (uint8_t i = 0; i < sizeof(elem->len); i++)
+    lcd->setCursor(x, y);
+    for (uint8_t i = 0; i < sizeof(len); i++)
     {
         lcd->print(' ');
     }
-    lcd->setCursor(elem->x, elem->y);
-    lcd->print(elem->text);
+    lcd->setCursor(x, y);
+    lcd->print(text);
 }
 
-void printUIElement(LiquidCrystal_I2C *lcd, ref *elem)
+void printInt(LiquidCrystal_I2C *lcd, uint8_t x, uint8_t y, uint8_t len, bool spacer, int var)
 {
-    lcd->setCursor(elem->x, elem->y);
-    for (uint8_t i = 0; i < sizeof(elem->len); i++)
+    lcd->setCursor(x, y);
+    if (spacer)
     {
-        lcd->print(' ');
+        for (uint8_t i = 0; i < len; i++)
+        {
+            lcd->print(' ');
+        }
     }
-    lcd->setCursor(elem->x, elem->y);
-    lcd->print(elem->text);
-}
+    else
+    {
+        for (uint8_t i = 0; i < len; i++)
+        {
+            lcd->print('0');
+        }
+    }
 
-void printUIElement(LiquidCrystal_I2C *lcd, inpField *elem)
-{
-    lcd->setCursor(elem->x, elem->y);
-    for (uint8_t i = 0; i < elem->len; i++)
-    {
-        lcd->print('0');
-    }
     uint8_t n = 1;
-    int buf = *elem->var;
-    for (uint8_t i = 1; i < elem->len; i++)
+    float buf = var;
+    for (uint8_t i = 1; i < len; i++)
     {
         buf /= 10;
-        if (buf)
+        if (buf > 0)
         {
             n++;
         }
     }
-    lcd->setCursor(elem->x + elem->len - n, elem->y);
-    lcd->print(*elem->var);
+    lcd->setCursor(x + len - n, y);
+    lcd->print(var);
 }
