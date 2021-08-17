@@ -1,8 +1,8 @@
 #include "header.h"
 #include <EEPROM.h>
+#include "LiquidCrystal_I2C.h"
 #include "timing.h"
 #include "commutation.h"
-#include "display.h"
 #include "iarduino_DHT.h"
 #include "iarduino_RTC.h"
 
