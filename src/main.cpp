@@ -108,7 +108,7 @@ void setup()
     // pinMode(RELAY_PIN2, OUTPUT);
     // pinMode(RELAY_PIN3, OUTPUT);
     // pinMode(RELAY_PIN4, OUTPUT);
-    pinMode(btn_left, INPUT_PULLUP);
+    // pinMode(btn_left, INPUT_PULLUP);
     // pinMode(btn_right, INPUT_PULLUP);
     // pinMode(btn_up, INPUT_PULLUP);
     // pinMode(btn_down, INPUT_PULLUP);
