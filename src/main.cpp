@@ -6,11 +6,11 @@
 #include "iarduino_DHT.h"
 #include "iarduino_RTC.h"
 
-#include <menu.h>
-#include <menuIO/serialOut.h>
-#include <menuIO/serialIn.h>
-#include <menuIO/altkeyIn.h>
-#include <menuIO/chainStream.h>
+#include "menu.h"
+#include "menuIO/serialOut.h"
+#include "menuIO/serialIn.h"
+#include "menuIO/altkeyIn.h"
+#include "menuIO/chainStream.h"
 
 event timing11[32]; // Расписание 1 режима работы 1 клапана
 event timing12[32]; // Расписание 1 режима работы 2 клапана
@@ -125,7 +125,7 @@ void setup()
     readData();
 
     Serial.begin(115200);
-
+    Serial.println("OK");
     watch.begin();
 
     lcd.init();
